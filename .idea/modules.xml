@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/m-common/m-common.iml" filepath="$PROJECT_DIR$/m-common/m-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-manager/m-manager.iml" filepath="$PROJECT_DIR$/m-manager/m-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-manager/m-manager-dao/m-manager-dao.iml" filepath="$PROJECT_DIR$/m-manager/m-manager-dao/m-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-manager/m-manager-interface/m-manager-interface.iml" filepath="$PROJECT_DIR$/m-manager/m-manager-interface/m-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-manager/m-manager-pojo/m-manager-pojo.iml" filepath="$PROJECT_DIR$/m-manager/m-manager-pojo/m-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-manager/m-manager-service/m-manager-service.iml" filepath="$PROJECT_DIR$/m-manager/m-manager-service/m-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-manager/m-manager-web/m-manager-web.iml" filepath="$PROJECT_DIR$/m-manager/m-manager-web/m-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-parent/m-parent.iml" filepath="$PROJECT_DIR$/m-parent/m-parent.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/m-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/resources/db.properties" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/resources/logback.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/resources/mybatis" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/resources/spring" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/m-parent" charset="UTF-8" />
+  </component>
+</project>
