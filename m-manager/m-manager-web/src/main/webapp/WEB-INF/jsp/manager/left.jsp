@@ -15,7 +15,7 @@
 <div class="container">
 
   <div class="leftsidebar_box">
-    <a href="${pageContext.request.contextPath}/main" target="main">
+    <a href="${pageContext.request.contextPath}/manager/main" target="main">
       <div class="line">
         <img class="icon1" src="${pageContext.request.contextPath}/static/images/coin01.png" />
         <img class="icon2" src="${pageContext.request.contextPath}/static/images/coin02.png" />&nbsp;&nbsp;首页
