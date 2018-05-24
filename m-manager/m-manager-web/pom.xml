@@ -20,6 +20,8 @@
     </properties>
 
     <dependencies>
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -45,7 +47,7 @@
 
         <dependency>
             <groupId>com.qf</groupId>
-            <artifactId>shop-manager-service</artifactId>
+            <artifactId>m-manager-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

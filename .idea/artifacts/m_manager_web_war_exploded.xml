@@ -8,10 +8,18 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
-          <element id="library" level="project" name="Maven: com.qf:shop-manager-service:1.0-SNAPSHOT" />
-          <element id="library" level="project" name="Maven: com.qf:shop-manager-dao:1.0-SNAPSHOT" />
-          <element id="library" level="project" name="Maven: com.qf:shop-manager-pojo:1.0-SNAPSHOT" />
-          <element id="library" level="project" name="Maven: com.qf:shop-manager-interface:1.0-SNAPSHOT" />
+          <element id="archive" name="m-manager-service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="m-manager-service" />
+          </element>
+          <element id="archive" name="m-manager-dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="m-manager-dao" />
+          </element>
+          <element id="archive" name="m-manager-pojo-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="m-manager-pojo" />
+          </element>
+          <element id="archive" name="m-manager-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="m-manager-interface" />
+          </element>
           <element id="library" level="project" name="Maven: com.qf:shop-common:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />

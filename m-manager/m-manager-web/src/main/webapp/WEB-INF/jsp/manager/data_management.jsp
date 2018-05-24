@@ -47,7 +47,7 @@
       <td>测试题1</td>
       <td>2017-01-10 16:33:45</td>
       <td><button class="sp">正常</button></td>
-      <td class="td-manage"><a title="处理" href="javascript:;" onclick="data_management_look('查看','/data_management_look','4','','510')"
+      <td class="td-manage"><a title="处理" href="javascript:;" onclick="data_management_look('查看','${pageContext.request.contextPath}/manager/data_management_look','4','','510')"
                                class="ml-5" style="text-decoration:none"> <i class="layui-icon">&#xe642;</i> </a> <a title="删除" href="javascript:;" onclick="data_management_del(this,'1')"
                                                                                                                      style="text-decoration:none"> <i class="layui-icon">&#xe640;</i> </a></td>
     </tr>
@@ -69,7 +69,7 @@
       <td>测试题1</td>
       <td>2017-02-18 10:09:31</td>
       <td><button class="sp">正常</button></td>
-      <td class="td-manage"><a title="处理" href="javascript:;" onclick="data_management_look('查看','/data_management_look','4','','510')"
+      <td class="td-manage"><a title="处理" href="javascript:;" onclick="data_management_look('查看','./data_management_look','4','','510')"
                                class="ml-5" style="text-decoration:none"> <i class="layui-icon">&#xe642;</i> </a> <a title="删除" href="javascript:;" onclick="data_management_del(this,'1')"
                                                                                                                      style="text-decoration:none"> <i class="layui-icon">&#xe640;</i> </a></td>
     </tr>

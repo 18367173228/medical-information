@@ -11,9 +11,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.qf:shop-manager-dao:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.qf:shop-manager-pojo:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.qf:shop-manager-interface:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="m-manager-dao" />
+    <orderEntry type="module" module-name="m-manager-pojo" />
+    <orderEntry type="module" module-name="m-manager-interface" />
     <orderEntry type="library" name="Maven: com.qf:shop-common:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />

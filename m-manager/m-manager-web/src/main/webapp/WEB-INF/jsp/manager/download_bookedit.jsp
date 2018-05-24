@@ -52,7 +52,7 @@
       <div class="layui-input-inline">
         <div class="site-demo-upbar">
           <button>
-            <img src="${pageContext.request.contextPath}/static/images/sctp.png">
+            <img src="images/sctp.png">
           </button>
         </div>
       </div>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="layui-form-item">
-      <label for="L_content" class="layui-form-label">
+      <label for="desc" class="layui-form-label">
         <span class="x-red">*</span>内容
       </label>
       <div class="layui-input-inline">
@@ -83,7 +83,7 @@
       </div>
     </div>
     <div class="layui-form-item">
-      <label for="" class="layui-form-label">
+      <label for="L_repass" class="layui-form-label">
       </label>
       <button  class="layui-btn">
         保存
@@ -94,9 +94,9 @@
     </div>
   </form>
 
-  <script src="${pageContext.request.contextPath}/static/lib/layui/layui.js" charset="utf-8">
+  <script src="./lib/layui/layui.js" charset="utf-8">
   </script>
-  <script src="${pageContext.request.contextPath}/static/js/x-layui.js" charset="utf-8">
+  <script src="./js/x-layui.js" charset="utf-8">
   </script>
   <script>
     layui.use(['form','layer','upload'], function(){

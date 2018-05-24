@@ -52,12 +52,6 @@
         <a href="${pageContext.request.contextPath}/manager/dangan" target="main" class="cks">档案管理</a>
         <img class="icon5" src="${pageContext.request.contextPath}/static/images/coin21.png" />
       </dd>
-      <dd>
-        <img class="coin11" src="${pageContext.request.contextPath}/static/images/coin111.png" />
-        <img class="coin22" src="${pageContext.request.contextPath}/static/images/coin222.png" />
-        <a href="${pageContext.request.contextPath}/shuju-one" target="main" class="cks">数据备份</a>
-        <img class="icon5" src="${pageContext.request.contextPath}/static/images/coin21.png" />
-      </dd>
     </dl>
     <!--用户管理-->
     <dl class="system_log">
@@ -133,7 +127,7 @@
       <dd>
         <img class="coin11" src="${pageContext.request.contextPath}/static/images/coin111.png" />
         <img class="coin22" src="${pageContext.request.contextPath}/static/images/coin222.png" />
-        <a href="${pageContext.request.contextPath}/manager/download" target="main" class="cks">资源下载</a>
+        <a href="${pageContext.request.contextPath}/manager/download-book-list" target="main" class="cks">资源下载</a>
         <img class="icon5" src="${pageContext.request.contextPath}/static/images/coin21.png" />
       </dd>
     </dl>

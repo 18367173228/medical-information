@@ -118,7 +118,7 @@
            class="ml-5" style="text-decoration:none">
           <i class="layui-icon">&#xe642;</i>
         </a>
-        <a style="text-decoration:none"  onclick="user_management_password('修改密码','${pageContext.request.contextPath}/manager/user_management_password.jsp','10001','600','400')"
+        <a style="text-decoration:none"  onclick="user_management_password('修改密码','${pageContext.request.contextPath}/manager/user_management_password','10001','600','400')"
            href="javascript:;" title="修改密码">
           <i class="layui-icon">&#xe631;</i>
         </a>

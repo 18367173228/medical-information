@@ -28,6 +28,8 @@
         <property name="dataSource" ref="dataSource"/>
         <!--属性注入mybatis的主配置文件-->
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+
+
     </bean>
 
     <!--配置扫描DAO接口-->
@@ -40,6 +42,8 @@
         <!--注入dao层所在包的基础路径-->
         <property name="basePackage" value="com.qf.manager.dao"/>
     </bean>
+
+
 
     
 </beans>
