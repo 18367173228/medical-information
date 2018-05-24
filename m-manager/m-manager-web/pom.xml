@@ -52,22 +52,21 @@
 
     <build>
         <finalName>m-manager-web</finalName>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.tomcat.maven</groupId>
-                    <artifactId>tomcat7-maven-plugin</artifactId>
-                    <!--配置Tomcat插件-->
-                    <configuration>
-                        <!--端口号-->
-                        <port>8080</port>
-                        <!--上下文-->
-                        <path>/medical</path>
-                        <!--解决GET请求中的中文乱码问题-->
-                        <uriEncoding>UTF-8</uriEncoding>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <!--Tomcat的maven插件的坐标-->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <!--配置Tomcat插件-->
+                <configuration>
+                    <!--端口号-->
+                    <port>81</port>
+                    <!--上下文-->
+                    <path>/manager</path>
+                    <!--解决GET请求中的中文乱码问题-->
+                    <uriEncoding>UTF-8</uriEncoding>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
