@@ -16,6 +16,9 @@
     <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/webapp/static/images" charset="GBK" />
     <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/webapp/static/js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/webapp/static/lib" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/webapp/static/lib/layui" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/webapp/static/lib/layui/lay/modules/table.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m-manager/m-manager-web/src/main/webapp/static/lib/layui/layui.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m-parent" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

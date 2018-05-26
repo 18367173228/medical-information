@@ -104,6 +104,29 @@
       </dd>
     </dl>
 
+    <!--药品管理-->
+    <dl class="system_log">
+      <dt>
+        <img class="icon1" src="${pageContext.request.contextPath}/static/images/coin03.png" />
+        <img class="icon2" src="${pageContext.request.contextPath}/static/images/coin04.png" />
+        药品管理
+        <img class="icon3" src="${pageContext.request.contextPath}/static/images/coin19.png" />
+        <img class="icon4" src="${pageContext.request.contextPath}/static/images/coin20.png" />
+      </dt>
+      <dd>
+        <img class="coin11" src="${pageContext.request.contextPath}/static/images/coin111.png" />
+        <img class="coin22" src="${pageContext.request.contextPath}/static/images/coin222.png" />
+        <a href="${pageContext.request.contextPath}/manager/user_management" target="main" class="cks">药品列表</a>
+        <img class="icon5" src="${pageContext.request.contextPath}/static/images/coin21.png" />
+      </dd>
+      <dd>
+        <img class="coin11" src="${pageContext.request.contextPath}/static/images/coin111.png" />
+        <img class="coin22" src="${pageContext.request.contextPath}/static/images/coin222.png" />
+        <a href="${pageContext.request.contextPath}/manager/role_management" target="main" class="cks">药品分类</a>
+        <img class="icon5" src="${pageContext.request.contextPath}/static/images/coin21.png" />
+      </dd>
+    </dl>
+
     <dl class="system_log">
       <dt>
         <img class="icon1" src="${pageContext.request.contextPath}/static/images/coin03.png" />
@@ -127,7 +150,7 @@
       <dd>
         <img class="coin11" src="${pageContext.request.contextPath}/static/images/coin111.png" />
         <img class="coin22" src="${pageContext.request.contextPath}/static/images/coin222.png" />
-        <a href="${pageContext.request.contextPath}/manager/download-book-list" target="main" class="cks">资源下载</a>
+        <a href="${pageContext.request.contextPath}/manager/download_book" target="main" class="cks">资源下载</a>
         <img class="icon5" src="${pageContext.request.contextPath}/static/images/coin21.png" />
       </dd>
     </dl>

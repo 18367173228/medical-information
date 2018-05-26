@@ -1,18 +1,17 @@
 package com.qf.manager.pojo.po;
-
 import java.util.Date;
-
 /**
- * Created by Administrator on 2018/5/24.
+ * Created by Administrator on 2018/5/25.
  * `reportId` int(11) NOT NULL AUTO_INCREMENT,
  `uname` varchar(255) DEFAULT NULL,
- `dname` varchar(255) DEFAULT NULL,
+ `did` varchar(255) DEFAULT NULL,
  `reportTime` date DEFAULT NULL,
  `title` varchar(255) DEFAULT NULL,
  `section` varchar(255) DEFAULT NULL,
  `picture` varchar(255) DEFAULT NULL,
+ `status` int(11) DEFAULT '1',
  */
-public class Report {
+public class Drug {
     private Integer reportId;
     private String uname;
     private String did;
@@ -21,28 +20,6 @@ public class Report {
     private String section;
     private String picture;
     private Integer status;
-
-    @Override
-    public String toString() {
-        return "Report{" +
-                "reportId=" + reportId +
-                ", uname='" + uname + '\'' +
-                ", did='" + did + '\'' +
-                ", reportTime=" + reportTime +
-                ", title='" + title + '\'' +
-                ", section='" + section + '\'' +
-                ", picture='" + picture + '\'' +
-                ", status=" + status +
-                '}';
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
 
     public Integer getReportId() {
         return reportId;
@@ -60,7 +37,13 @@ public class Report {
         this.uname = uname;
     }
 
+    public String getDid() {
+        return did;
+    }
 
+    public void setDid(String did) {
+        this.did = did;
+    }
 
     public Date getReportTime() {
         return reportTime;
@@ -94,12 +77,11 @@ public class Report {
         this.picture = picture;
     }
 
-    public String getDid() {
-        return did;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setDid(String did) {
-        this.did = did;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
-
 }
