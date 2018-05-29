@@ -16,7 +16,7 @@ public class Report {
     private Integer reportId;
     private String uname;
     private String did;
-    private Date reportTime;
+    private String reportTime;
     private String title;
     private String section;
     private String picture;
@@ -62,11 +62,11 @@ public class Report {
 
 
 
-    public Date getReportTime() {
+    public String getReportTime() {
         return reportTime;
     }
 
-    public void setReportTime(Date reportTime) {
+    public void setReportTime(String reportTime) {
         this.reportTime = reportTime;
     }
 

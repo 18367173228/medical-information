@@ -1,87 +1,93 @@
 package com.qf.manager.pojo.po;
-import java.util.Date;
-/**
- * Created by Administrator on 2018/5/25.
- * `reportId` int(11) NOT NULL AUTO_INCREMENT,
- `uname` varchar(255) DEFAULT NULL,
- `did` varchar(255) DEFAULT NULL,
- `reportTime` date DEFAULT NULL,
- `title` varchar(255) DEFAULT NULL,
- `section` varchar(255) DEFAULT NULL,
- `picture` varchar(255) DEFAULT NULL,
- `status` int(11) DEFAULT '1',
- */
+
 public class Drug {
-    private Integer reportId;
-    private String uname;
-    private String did;
-    private Date reportTime;
-    private String title;
-    private String section;
-    private String picture;
-    private Integer status;
+    private Long drugid;
 
-    public Integer getReportId() {
-        return reportId;
+    private String drugname;
+
+    private String drugimg;
+
+    private Double drugprice;
+
+    private Integer cid;
+
+    private String productiondate;
+
+    private String shelflife;
+
+    private String note;
+
+    private Integer dstatus;
+
+    public Long getDrugid() {
+        return drugid;
     }
 
-    public void setReportId(Integer reportId) {
-        this.reportId = reportId;
+    public void setDrugid(Long drugid) {
+        this.drugid = drugid;
     }
 
-    public String getUname() {
-        return uname;
+    public String getDrugname() {
+        return drugname;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setDrugname(String drugname) {
+        this.drugname = drugname == null ? null : drugname.trim();
     }
 
-    public String getDid() {
-        return did;
+    public String getDrugimg() {
+        return drugimg;
     }
 
-    public void setDid(String did) {
-        this.did = did;
+    public void setDrugimg(String drugimg) {
+        this.drugimg = drugimg == null ? null : drugimg.trim();
     }
 
-    public Date getReportTime() {
-        return reportTime;
+    public Double getDrugprice() {
+        return drugprice;
     }
 
-    public void setReportTime(Date reportTime) {
-        this.reportTime = reportTime;
+    public void setDrugprice(Double drugprice) {
+        this.drugprice = drugprice;
     }
 
-    public String getTitle() {
-        return title;
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
-    public String getSection() {
-        return section;
+    public String getProductiondate() {
+        return productiondate;
     }
 
-    public void setSection(String section) {
-        this.section = section;
+    public void setProductiondate(String productiondate) {
+        this.productiondate = productiondate == null ? null : productiondate.trim();
     }
 
-    public String getPicture() {
-        return picture;
+    public String getShelflife() {
+        return shelflife;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setShelflife(String shelflife) {
+        this.shelflife = shelflife == null ? null : shelflife.trim();
     }
 
-    public Integer getStatus() {
-        return status;
+    public String getNote() {
+        return note;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setNote(String note) {
+        this.note = note == null ? null : note.trim();
+    }
+
+    public Integer getDstatus() {
+        return dstatus;
+    }
+
+    public void setDstatus(Integer dstatus) {
+        this.dstatus = dstatus;
     }
 }

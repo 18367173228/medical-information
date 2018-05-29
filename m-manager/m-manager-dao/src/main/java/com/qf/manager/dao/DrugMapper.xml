@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.manager.dao.DrugMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.manager.pojo.po.Drug" >
+    <id column="drugId" property="drugid" jdbcType="INTEGER" />
+    <result column="drugName" property="drugname" jdbcType="VARCHAR" />
+    <result column="drugImg" property="drugimg" jdbcType="VARCHAR" />
+    <result column="drugPrice" property="drugprice" jdbcType="DOUBLE" />
+    <result column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="productionDate" property="productiondate" jdbcType="VARCHAR" />
+    <result column="shelfLife" property="shelflife" jdbcType="VARCHAR" />
+    <result column="note" property="note" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    drugId, drugName, drugImg, drugPrice, cid, productionDate, shelfLife, note, status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.manager.pojo.po.DrugExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from drug
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from drug
+    where drugId = #{drugid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from drug
+    where drugId = #{drugid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.manager.pojo.po.DrugExample" >
+    delete from drug
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.manager.pojo.po.Drug" >
+    insert into drug (drugId, drugName, drugImg, 
+      drugPrice, cid, productionDate, 
+      shelfLife, note, status
+      )
+    values (#{drugid,jdbcType=INTEGER}, #{drugname,jdbcType=VARCHAR}, #{drugimg,jdbcType=VARCHAR}, 
+      #{drugprice,jdbcType=DOUBLE}, #{cid,jdbcType=INTEGER}, #{productiondate,jdbcType=VARCHAR}, 
+      #{shelflife,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.manager.pojo.po.Drug" >
+    insert into drug
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="drugid != null" >
+        drugId,
+      </if>
+      <if test="drugname != null" >
+        drugName,
+      </if>
+      <if test="drugimg != null" >
+        drugImg,
+      </if>
+      <if test="drugprice != null" >
+        drugPrice,
+      </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="productiondate != null" >
+        productionDate,
+      </if>
+      <if test="shelflife != null" >
+        shelfLife,
+      </if>
+      <if test="note != null" >
+        note,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="drugid != null" >
+        #{drugid,jdbcType=INTEGER},
+      </if>
+      <if test="drugname != null" >
+        #{drugname,jdbcType=VARCHAR},
+      </if>
+      <if test="drugimg != null" >
+        #{drugimg,jdbcType=VARCHAR},
+      </if>
+      <if test="drugprice != null" >
+        #{drugprice,jdbcType=DOUBLE},
+      </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="productiondate != null" >
+        #{productiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="shelflife != null" >
+        #{shelflife,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.manager.pojo.po.DrugExample" resultType="java.lang.Integer" >
+    select count(*) from drug
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update drug
+    <set >
+      <if test="record.drugid != null" >
+        drugId = #{record.drugid,jdbcType=INTEGER},
+      </if>
+      <if test="record.drugname != null" >
+        drugName = #{record.drugname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugimg != null" >
+        drugImg = #{record.drugimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drugprice != null" >
+        drugPrice = #{record.drugprice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.productiondate != null" >
+        productionDate = #{record.productiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shelflife != null" >
+        shelfLife = #{record.shelflife,jdbcType=VARCHAR},
+      </if>
+      <if test="record.note != null" >
+        note = #{record.note,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update drug
+    set drugId = #{record.drugid,jdbcType=INTEGER},
+      drugName = #{record.drugname,jdbcType=VARCHAR},
+      drugImg = #{record.drugimg,jdbcType=VARCHAR},
+      drugPrice = #{record.drugprice,jdbcType=DOUBLE},
+      cid = #{record.cid,jdbcType=INTEGER},
+      productionDate = #{record.productiondate,jdbcType=VARCHAR},
+      shelfLife = #{record.shelflife,jdbcType=VARCHAR},
+      note = #{record.note,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.manager.pojo.po.Drug" >
+    update drug
+    <set >
+      <if test="drugname != null" >
+        drugName = #{drugname,jdbcType=VARCHAR},
+      </if>
+      <if test="drugimg != null" >
+        drugImg = #{drugimg,jdbcType=VARCHAR},
+      </if>
+      <if test="drugprice != null" >
+        drugPrice = #{drugprice,jdbcType=DOUBLE},
+      </if>
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="productiondate != null" >
+        productionDate = #{productiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="shelflife != null" >
+        shelfLife = #{shelflife,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where drugId = #{drugid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.manager.pojo.po.Drug" >
+    update drug
+    set drugName = #{drugname,jdbcType=VARCHAR},
+      drugImg = #{drugimg,jdbcType=VARCHAR},
+      drugPrice = #{drugprice,jdbcType=DOUBLE},
+      cid = #{cid,jdbcType=INTEGER},
+      productionDate = #{productiondate,jdbcType=VARCHAR},
+      shelfLife = #{shelflife,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER}
+    where drugId = #{drugid,jdbcType=INTEGER}
+  </update>
+</mapper>

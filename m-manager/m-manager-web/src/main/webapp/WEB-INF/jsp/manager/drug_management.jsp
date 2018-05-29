@@ -16,16 +16,16 @@
 
 </head>
 <body>
-<div class="x-nav"> <span class="layui-breadcrumb"> <a><cite>首页</cite></a> <a><cite>网站信息管理</cite></a> <a><cite>药品列表</cite></a> </span> <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a> </div>
+<div class="x-nav"> <span class="layui-breadcrumb"> <a><cite>首页</cite></a> <a><cite>网站信息管理</cite></a> <a><cite>药品列表</cite></a> </span> </div>
 <div class="x-body">
-  <form class="layui-form x-center" action="" style="width:500px">
+ <form class="layui-form x-center" onsubmit="return false" style="width:500px">
     <div class="layui-form-pane">
       <div class="layui-form-item">
         <div class="layui-input-inline" style="width:400px">
-          <input type="text" name="username"  placeholder="搜索内容" autocomplete="off" class="layui-input">
+          <input id="drugName" type="text" name="username"  placeholder="搜索内容" autocomplete="off" class="layui-input">
         </div>
         <div class="layui-input-inline" style="width:80px">
-          <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+          <button id="searchId" data-type="searchBean" class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
         </div>
       </div>
     </div>
@@ -38,40 +38,18 @@
       <div class="layui-tab-item layui-show">
         <form class="layui-form layui-form-pane" action="">
         </form>
-        <div class="tools">
-          <ul class="toolbar">
-            <li onclick="download_bookadd('添加信息','${pageContext.request.contextPath}/manager/download_bookadd','600','500')"><span><img src="${pageContext.request.contextPath}/static/images/t01.png" /></span>添加</li>
-          </ul>
-          <span class="x-right" style="line-height:25px">共有数据：88 条</span></xblock>
+        <div class="weadmin-block demoTable">
+          <button class="layui-btn layui-btn-danger" id="updateStatus" data-type="updateType"><i class="layui-icon">&#xe640;</i>批量删除</button>
+          <button class="layui-btn" onclick="download_bookadd('添加商品','./drug_management_add',600,500)"><i class="layui-icon">&#xe61f;</i>添加</button>
         </div>
+        <%--<div class="tools">--%>
+          <%--<ul class="toolbar">--%>
+            <%--<li><button class="layui-btn layui-btn-danger" id="updateStatus" data-type="updateType"><span><img src="${pageContext.request.contextPath}/static/images/t03.png" /></span>批量删除</button></li>--%>
+            <%--<li onclick="download_bookadd('添加信息','${pageContext.request.contextPath}/manager/download_bookadd','600','500')"><span><img src="${pageContext.request.contextPath}/static/images/t01.png" /></span>添加</li>--%>
+          <%--</ul>--%>
+          <%--<span class="x-right" style="line-height:25px">共有数据：88 条</span></xblock>--%>
+        <%--</div>--%>
         <table id="druglist" class="tablelist">
-          <%--<thead>--%>
-          <%--<tr>--%>
-            <%--<th width="5%"> <input onclick="selectAll()" type="checkbox"   name="controlAll"  id="controlAll">--%>
-            <%--</th>--%>
-            <%--<th width="9%">标题</th>--%>
-            <%--<th>图片</th>--%>
-            <%--<th width="9%">发表时间</th>--%>
-            <%--<th>内容</th>--%>
-            <%--<th width="8%">显示状态</th>--%>
-            <%--<th width="8%">操作</th>--%>
-          <%--</tr>--%>
-          <%--</thead>--%>
-          <%--<tbody id="x-img">--%>
-
-          <%--<tr>--%>
-            <%--<td><input type="checkbox" value="1" name="selected"></td>--%>
-            <%--<td width="7%">书籍</td>--%>
-            <%--<td align="center" width="7%">-</td>--%>
-            <%--<td >2017-07-15</td>--%>
-            <%--<td >叙述内容</td>--%>
-            <%--<td class="td-status"><button class="sp">已上传</button></td>--%>
-            <%--<td class="td-manage"> <a title="修改" href="javascript:;" onclick="download_bookedit('修改','${pageContext.request.contextPath}/manager/download_bookedit','4','','510')"--%>
-                                      <%--class="ml-5" style="text-decoration:none"> <i class="layui-icon">&#xe642;</i> </a>--%>
-              <%--<a title="删除" href="javascript:;" onclick="banner_del(this,'1')" style="text-decoration:none"> <i class="layui-icon">&#xe640;</i> </a>--%>
-            <%--</td>--%>
-          <%--</tr>--%>
-          <%--</tbody>--%>
         </table>
       </div>
     </div>
@@ -83,6 +61,7 @@
     <script src="${pageContext.request.contextPath}/static/lib/layui/layui.js" charset="utf-8"></script>
     <script src="${pageContext.request.contextPath}/static/js/x-layui.js" charset="utf-8"></script>
     <script src="${pageContext.request.contextPath}/static/js/js.js" charset="utf-8"></script>
+
     <script>
       layui.use(['laydate','element','laypage','layer','table'], function(){
        var $ = layui.jquery,//jquery
@@ -98,24 +77,74 @@
           url:'../drugManagement',
           cols:[[
             {type:'checkbox'},
-            {field:'drugId',title:'药品编号'},
-            {field:'drugName',title:'药品名称'},
-            {field:'drugImg',title:'药品图片'},
-            {field:'drugPrice',title:'药品价格'},
-            {field:'drugExplain',title:'药品用途'},
-            {field:'productionDate',title:'生产日期'},
-            {field:'shelfLife',title:'保质期'},
+            {field:'drugid',title:'药品编号'},
+            {field:'drugname',title:'药品名称'},
+            {field:'drugimg',title:'药品图片'},
+            {field:'drugprice',title:'药品价格'},
+            {field:'catName',title:'药品分类'},
+            {field:'productiondate',title:'生产日期'},
+            {field:'shelflife',title:'保质期'},
             {field:'note',title:'备注'},
-            {field:'status',title:'药品状态'}
+            {field:'dstatus',title:'药品状态',templet:'#mytpl'}
           ]]
+
+
         });
+
+        var active = {
+          updateType:function(){
+            var data = table.checkStatus("druglist").data;
+            if(data.length>0){
+              var ids = [];
+              for(var i=0;i<data.length;i++){
+                ids.push(data[i].drugid);
+              }
+              $.post(
+                      '../batch',
+                      {'ids[]':ids},
+                      function(data){
+                        if(data>0){
+                          $('.layui-laypage-btn').click();
+                          layer.msg("删除成功！",{icon:1});
+                        }
+                      }
+              );
+            }else{
+              layer.msg("请选择至少一行后再批量删除！",{icon:2});
+            }
+          },
+          searchBean: function () {
+            var drugname = $("#drugName").val();
+            if($.trim(drugname).length>0){
+              table.reload("druglist",{
+                page:{curr:1},
+                where:{drugname:drugname}
+              });
+            }
+          }
+
+        }
+        //点击"批量删除"按钮触发的事件
+        $("#updateStatus").on('click',function(){
+          var type = $(this).data("type");
+          active[type]?active[type].call(this):'';
+        });
+        //点击"模糊查询"按钮触发的事件
+        $("#searchId").on('click',function(){
+          var type = $(this).data("type");
+          active[type]?active[type].call(this):'';
+        });
+
       });
+
 
 
       /*图片添加*/
       function download_bookadd(title,url,w,h){
         x_admin_show(title,url,w,h);
       }
+//      批量删除按钮选中
+
 
       //图片修改
       function download_bookedit (title,url,id,w,h) {
@@ -124,9 +153,15 @@
 
 
 
-      $('.tablelist tbody tr:odd').addClass('odd');
+     // $('.tablelist tbody tr:odd').addClass('odd');
     </script>
   </div>
   </div>
+<script type="text/html" id="mytpl" >
+  <div class="layui-form">
+    <input type="checkbox" name="dstatus" id="dstatus" lay-filter="dstatus" lay-skin="switch" lay-text="正常|下架" {{1==d.dstatus?'checked':''}}/>
+
+  </div>
+</script>dstatus
 </body>
 </html>
